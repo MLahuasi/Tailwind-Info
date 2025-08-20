@@ -14,6 +14,8 @@
 
 #### [RESPONSIVE](./06-responsive.md)
 
+#### [PSEUDOCLASES](./07-pseudoclases.md)
+
 ### TIPS
 
 ## BUSCAR PROPIEDAD TAILDWIND POR CSS

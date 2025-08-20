@@ -1,1 +1,63 @@
 @import "tailwindcss";
+
+/* ===========================
+   Tokens / Tema
+   =========================== */
+@theme {
+  /* Fuentes */
+  --font-inter: "Inter", sans-serif;
+
+  /* Colors */
+  --color-principal-pagina: #121416;
+  --color-button: #dce8f3;
+  --color-borde-pagina: #2c3135;
+
+  --color-secundario-pagina: #1e2124;
+  --color-textos-card: #929ba2;
+
+  /* Breakpoints Personalizados */
+  /* Edit breakpoint */
+  --breakpoint-md: 52rem;
+  /* New breakpoint */
+  --breakpoint-custom-bp-800: 70rem;
+}
+
+/* ===========================
+   Variables globales (URLs SVG)
+   Nota: las rutas son relativas a ESTE archivo CSS.
+   =========================== */
+:root {
+  --icono-menu-abierto: url("./assets/svg/bx-menu.svg");
+  --icono-menu-cerrado: url("./assets/svg/bx-x.svg");
+  --hero-img: linear-gradient(#000000c5, #000000d8),
+    url("./assets/images/img-computer.jpg");
+}
+
+@layer components {
+  /* =========================================
+     Icono hamburguesa (usa variables de :root)
+     - Color del icono = currentColor -> controlable con Tailwind (text-white, text-blue-600, etc.)
+     - Máscara: usamos las variables para las URLs
+     ========================================= */
+  .icon-menu {
+    display: inline-block; /* para que el tamaño tenga efecto */
+    inline-size: 2rem; /* ancho */
+    block-size: 2rem; /* alto */
+    background-color: currentColor; /* pinta el icono con el color del texto */
+    cursor: pointer;
+    position: relative;
+
+    /* Máscara por defecto: menú abierto (hamburguesa) */
+    -webkit-mask: var(--icono-menu-abierto) no-repeat center / contain;
+    mask: var(--icono-menu-abierto) no-repeat center / contain;
+  }
+
+  /* =========================================
+     Estado toggled: cuando el input interno está :checked
+     Cambiamos la máscara usando la variable de "cerrado"
+     ========================================= */
+  .icon-menu:has(:checked) {
+    -webkit-mask: var(--icono-menu-cerrado) no-repeat center / contain;
+    mask: var(--icono-menu-cerrado) no-repeat center / contain;
+  }
+}

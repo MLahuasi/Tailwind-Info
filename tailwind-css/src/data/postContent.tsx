@@ -1,5 +1,20 @@
-import { BoxModel, Color, Flexbox, Text } from "../post";
-import { CardBoxModel, TodoColor } from "../post/Labs";
+import {
+  BoxModel,
+  Color,
+  Custom,
+  Flexbox,
+  Pseudoclass,
+  Responsive,
+  Text,
+} from "../post";
+import {
+  CardBoxModel,
+  CardOverlay,
+  DropDown,
+  FloatLabel,
+  ResponsiveForm,
+  TodoColor,
+} from "../post/Labs";
 import { todoColorItems } from "./todoColorItems";
 
 export const postContent: Record<string, React.ReactNode> = {
@@ -9,4 +24,11 @@ export const postContent: Record<string, React.ReactNode> = {
   "4": <BoxModel />,
   "5": <CardBoxModel />,
   "6": <Flexbox />,
+  "7": <Responsive />,
+  "8": <ResponsiveForm />,
+  "9": <Pseudoclass />,
+  "10": <CardOverlay />,
+  "11": <FloatLabel />,
+  "12": <DropDown />,
+  "13": <Custom />,
 };
